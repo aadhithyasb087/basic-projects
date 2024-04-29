@@ -9,6 +9,9 @@ app.engine('hbs',exhbs.engine({layoutsDir:'views/',defaultLayout:"main",extname:
 app.set('view engine','hbs');
 app.set('views','views');
 app.use(bodyParser.urlencoded({extended:true}));
+app.get('/',async(req,res)=>{
+    res.send("Helo")
+})
 
 app.get('/',async (req,res)=>{
 let database = await dbo.getDatabase()
