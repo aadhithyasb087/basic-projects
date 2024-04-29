@@ -10,7 +10,7 @@ app.set('view engine','hbs');
 app.set('views','views');
 app.use(bodyParser.urlencoded({extended:true}));
 app.get('/hello',async(req,res)=>{
-    res.send("Helo")
+    res.send("Helo");
 })
 
 app.get('/',async (req,res)=>{
