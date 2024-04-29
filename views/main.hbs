@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonngoDB</title>
+</head>
+<body>
+    <h1>MongoDB CRUD example</h1>
+    {{message}}
+{{#if edit_id}}
+ <h3>Edit</h3>
+    <form method="post" action="/update_employee/{{edit_id}}">
+        <label for="">Name</label>
+        <input type="text" name="name" value="{{edit_employee.name}}">
+        <label for="">Id</label>
+        <input type="text" name="id" value="{{edit_employee.id}}">
+        <input type="submit" >
+    </form><br><br> 
+     {{else}}
+
+    <h3>Create</h3>
+    <form method="post" action="/store_employee">
+        <label for="">Name</label>
+        <input type="text" name="name">
+        <label for="">Id</label>
+        <input type="text" name="id">
+        <input type="submit" >
+    </form><br><br>
+{{/if}}
+    <ul>
+        {{#each employees}}
+        <li>
+{{this.name}} - {{this.id}}  <a href="/?edit_id={{this._id}}">Edit</a>
+<a href="/?delete_id={{this._id}}" onclick="return confirm('Are you sure want to delete?')" >Delete</a></li>
+        </li>
+        {{/each}}
+    </ul>
+</body>
+</html>
