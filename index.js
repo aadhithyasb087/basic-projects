@@ -9,7 +9,7 @@ app.engine('hbs',exhbs.engine({layoutsDir:'views/',defaultLayout:"main",extname:
 app.set('view engine','hbs');
 app.set('views','views');
 app.use(bodyParser.urlencoded({extended:true}));
-app.get('/',async(req,res)=>{
+app.get('/hello',async(req,res)=>{
     res.send("Helo")
 })
 
