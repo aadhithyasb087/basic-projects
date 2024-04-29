@@ -5,7 +5,7 @@ const exhbs = require('express-handlebars');
 const dbo=require('./db');
 const ObjectId = dbo.ObjectID
 
-app.engine('hbs',exhbs.engine({layoutsDir:'views/',defaultLayout:"index",extname:"hbs"}));
+app.engine('hbs',exhbs.engine({layoutsDir:'views/',defaultLayout:"main",extname:"hbs"}));
 app.set('view engine','hbs');
 app.set('views','views');
 app.use(bodyParser.urlencoded({extended:true}));
